@@ -17,14 +17,14 @@ export const getProductData = async () => {
 };
 
 interface IProduct {
-  title: string,
-  _id:string,
-  description: string,
-  image:IImage,
-  price:number,
-  category:{
-    name:string
-  }
+  title: string;
+  _id: string;
+  description: string;
+  image: IImage;
+  price: number;
+  category: {
+    name: string;
+  };
 }
 
 export default async function Home() {
@@ -34,12 +34,16 @@ export default async function Home() {
       {data.map((item) => (
         <div>
           <Image
-          width={200}
-          height={200} 
-          src={urlForImage(item.image).url()} alt="products"></Image>
+            width={200}
+            height={200}
+            src={urlForImage(item.image).url()}
+            alt="products"
+          ></Image>
           <h2>{item.title}$</h2>
           <p>{item.price}$</p>
-          <button className="border py-2 px-6 bg-blue-600 text-white rounded">Add to Cart</button>
+          <button className="border py-2 px-6 bg-blue-600 text-white rounded">
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>
