@@ -31,7 +31,7 @@ export default async function Home() {
   const data: IProduct[] = await getProductData();
   return (
     <div className="grid grid-cols-[repeat(3,auto)] justify-center gap-x-10">
-      {data.map((item) => (
+      {data.map((item,key) => (
         <div>
           <Image
             width={200}
