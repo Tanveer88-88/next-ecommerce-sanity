@@ -2,6 +2,7 @@ import Image from "next/image";
 import { client } from "@/lib/sanityClient";
 import { Image as IImage } from "sanity";
 import { urlForImage } from "../../sanity/lib/image";
+import ProductCard from "./ProductCard";
 
  const getProductData = async () => {
   const res = await client.fetch(`*[_type=="products"]{
@@ -33,17 +34,7 @@ export default async function Home() {
     <div className="grid grid-cols-[repeat(3,auto)] justify-center gap-x-10">
       {data.map((item,index) => (
         <div key={index}>
-          <Image
-            width={200}
-            height={200}
-            src={urlForImage(item.image).url()}
-            alt="products"
-          ></Image>
-          <h2>{item.title}$</h2>
-          <p>{item.price}$</p>
-          <button className="border py-2 px-6 bg-blue-600 text-white rounded">
-            Add to Cart
-          </button>
+        <ProductCard item={item}/>
         </div>
       ))}
     </div>
