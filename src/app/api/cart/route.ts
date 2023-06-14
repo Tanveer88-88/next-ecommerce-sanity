@@ -1,5 +1,5 @@
 import {NextRequest, NextResponse} from "next/server"
 
-export const GET= async (request:Request) => {
+// export const GET= async (request:Request) => {
 
-}
+// }
